@@ -2,11 +2,18 @@
 
 import { Search, Dice5, Receipt, Trophy, MessageSquare } from "lucide-react"
 
-export function MobileNav() {
+interface MobileNavProps {
+  onBrowseClick: () => void
+}
+
+export function MobileNav({ onBrowseClick }: MobileNavProps) {
   return (
     <nav className="fixed bottom-0 left-0 right-0 h-20 bg-[#1a2c38] border-t border-[#2a3c48] z-50 lg:hidden">
       <div className="h-full flex items-center justify-around px-2">
-        <button className="flex flex-col items-center gap-1 py-2 px-4 text-gray-400 hover:text-white transition-colors">
+        <button
+          onClick={onBrowseClick}
+          className="flex flex-col items-center gap-1 py-2 px-4 text-gray-400 hover:text-white transition-colors"
+        >
           <Search className="w-5 h-5" />
           <span className="text-xs font-medium">Browse</span>
         </button>

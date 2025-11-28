@@ -57,36 +57,36 @@ export function RouletteLive() {
   }
 
   return (
-    <section className="px-4 pb-24 lg:px-6 lg:pb-12">
+    <section className="px-4 pb-20 md:pb-24 lg:px-6 lg:pb-12">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-4 lg:mb-6">
+        <div className="flex items-center justify-between mb-3 md:mb-4 lg:mb-6">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <h2 className="text-lg lg:text-2xl font-bold text-white">Roulette Live</h2>
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-red-500 animate-pulse" />
+            <h2 className="text-base md:text-lg lg:text-2xl font-bold text-white">Roulette Live</h2>
           </div>
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="p-1.5 lg:p-2 rounded-lg bg-[#2a3c48] hover:bg-[#3a4c58] transition-colors"
+              className="p-1.5 md:p-1.5 lg:p-2 rounded-lg bg-[#2a3c48] hover:bg-[#3a4c58] transition-colors"
             >
-              <ChevronLeft className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+              <ChevronLeft className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white" />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-1.5 lg:p-2 rounded-lg bg-[#2a3c48] hover:bg-[#3a4c58] transition-colors"
+              className="p-1.5 md:p-1.5 lg:p-2 rounded-lg bg-[#2a3c48] hover:bg-[#3a4c58] transition-colors"
             >
-              <ChevronRight className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+              <ChevronRight className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white" />
             </button>
           </div>
         </div>
 
         <div
           ref={scrollRef}
-          className="flex gap-3 lg:gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
+          className="flex gap-2 md:gap-3 lg:gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {rouletteGames.map((game, index) => (
-            <div key={index} className="flex-none w-36 lg:w-48">
+            <div key={index} className="flex-none w-32 md:w-36 lg:w-48">
               <GameCard image={game.image} title={game.title} />
             </div>
           ))}
